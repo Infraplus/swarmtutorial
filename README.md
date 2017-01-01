@@ -1,8 +1,9 @@
-# webserverimage
+# Swarm Tutorial
 Webserver Docker Image that display Ip address of the running container (Used for Docker Swarm Tutoriel)
 
 # Prerequistes 
 Docker installed
+Docker-machine installed (optionnal, you can create your own VMs)
 
 ## Docker installation:
 echo "deb https://apt.dockerproject.org/repo ubuntu-$(grep CODENAME /etc/lsb-release | awk -F'=' '{print $NF}') main" | sudo tee /etc/apt/sources.list.d/docker.list</br>
@@ -12,6 +13,11 @@ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80  --recv-keys 58
 sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual docker-engine -y</br>
 
 For more information: https://docs.docker.com/engine/installation/linux/ubuntulinux/
+
+## Docker-machine installation (Docker should be installed):
+sudo curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && sudo chmod +x /usr/local/bin/docker-machine</br>
+
+For more information:https://docs.docker.com/machine/install-machine/
 
 # How to:
 You can create your image or pull it directly from dockerhub:
