@@ -28,8 +28,8 @@ You can create your image or pull it directly from dockerhub:
 
 ## Create local image
 ```
-$git clone git@github.com:shitana/webserverimage.git
-$cd webserverimage/
+$git clone git@github.com:shitana/swarmtutorial.git
+$cd swarmtutorial/
 $sudo docker build -t webserverphp:latest .
 --snip--
 $ sudo docker images
