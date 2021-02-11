@@ -1,3 +1,27 @@
+- [Swarm Tutorial](#swarm-tutorial)
+- [Prerequistes](#prerequistes)
+  * [Docker installation](#docker-installation-)
+  * [Docker-machine installation (Docker should be installed)](#docker-machine-installation-docker-should-be-installed)
+- [How to:](#how-to)
+  * [Create local image](#create-local-image)
+  * [Pull image from dockerhub](#pull-image-from-dockerhub)
+  * [Run the container](#run-the-container)
+- [Docker swarm tutorial](#docker-swarm-tutorial)
+  * [Prepare environment](#prepare-environment)
+    + [Create machines](#create-machines)
+    + [List available machine](#list-available-machine)
+    + [SSH connexion](#ssh-connexion)
+  * [Prepare Swarm](#prepare-swarm)
+    + [Create swarm (Manager1)](#create-swarm-manager1)
+    + [Join Swarm (worker1 and worker2)](#join-swarm-worker1-and-worker2)
+    + [List swarm node (Manager1)](#list-swarm-node-manager1)
+  * [Service management](#service-management)
+    + [Create service](#create-service)
+    + [Inspect service](#inspect-service)
+    + [Check Swarm loadbalancer](#check-swarm-loadbalancer)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 # Swarm Tutorial
 Webserver Docker Image that display Ip address of the running container (Used for Docker Swarm Tutoriel)
  
@@ -5,7 +29,7 @@ Webserver Docker Image that display Ip address of the running container (Used fo
 Docker installed
 Docker-machine installed (optionnal, you can create your own VMs)
 
-## Docker installation:
+## Docker installation
 ```
 echo "deb https://apt.dockerproject.org/repo ubuntu-$(grep CODENAME /etc/lsb-release | awk -F'=' '{print $NF}') main" | sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt-get update
@@ -16,7 +40,7 @@ sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual doc
 
 For more information: https://docs.docker.com/engine/installation/linux/ubuntulinux/
 
-## Docker-machine installation (Docker should be installed):
+## Docker-machine installation (Docker should be installed)
 ```
 sudo curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && sudo chmod +x /usr/local/bin/docker-machine
 ```
@@ -62,7 +86,7 @@ $ sudo docker-machine create --driver virtualbox --virtualbox-memory "1024" work
 $ sudo docker-machine create --driver virtualbox --virtualbox-memory "1024" worker2
 ```
 
-### List available machine:
+### List available machine
 ```
 $ sudo docker-machine ls
 NAME       ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER    ERRORS
