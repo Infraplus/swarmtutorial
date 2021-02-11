@@ -1,6 +1,6 @@
 - [Swarm Tutorial](#swarm-tutorial)
 - [Prerequistes](#prerequistes)
-  * [Docker installation](#docker-installation-)
+  * [Docker installation](#docker-installation)
   * [Docker-machine installation (Docker should be installed)](#docker-machine-installation-docker-should-be-installed)
 - [How to:](#how-to)
   * [Create local image](#create-local-image)
